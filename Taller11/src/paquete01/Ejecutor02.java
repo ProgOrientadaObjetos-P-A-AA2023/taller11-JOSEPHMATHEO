@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete01;
 
+import paquete02.*;
+import paquete03.*;
 import java.util.ArrayList;
 
-/**
- *
- * @author reroes
- */
 public class Ejecutor02 {
     public static void main(String[] args) {
         
@@ -34,31 +27,98 @@ public class Ejecutor02 {
             {"Carta 003", "8", "1.9", "2.2", "5"}, 
             {"Carta 004", "9", "2.5", "2.9", "5"}, 
         };
-                
         
         // Lista de Menus
-        ArrayList lista = new ArrayList<>();
+        
+        ArrayList<Menu> lista = new ArrayList<>();
         
         /* Agregar un proceso para generar objetos de tipo Menu Carta, Día, 
         Economico y Niño*. Cada arreglo datos, se corresponde a un tipo de Menú.
         Iterar y crear los objetos según corresponda. Cada objeto generado, 
         agregar al ArrayList lista*/
+        
         // Inicio de solución
+        
+        for(int i = 0; i < datos001.length; i++){
+            
+            for(int j =0; j < 1 ; j++){
+                
+                String nombre = datos001[i][j];
+                double valori = Double.parseDouble( datos001[i][j+1]);
+                double valorpH = Double.parseDouble( datos001[i][j+2]);
+                double valorpP = Double.parseDouble( datos001[i][j+3]);
+                
+                MenuNinos menuN = new MenuNinos(nombre, valori, valorpH, valorpP);
+                lista.add(menuN);
+                
+            }
+            
+        }
+        
+        for(int i = 0; i < datos002.length; i++){
+            
+            for(int j =0; j < 1 ; j++){
+                
+                String nombre = datos002[i][j];
+                double valori = Double.parseDouble( datos002[i][j+1]);
+                double desc = Double.parseDouble( datos002[i][j+2]);
+                
+                MenuEconomico menuE = new MenuEconomico(nombre, valori, desc);
+                lista.add(menuE);
+                
+            }
+            
+        }
+        
+        for(int i = 0; i < datos003.length; i++){
+            
+            for(int j =0; j < 1; j++){
+                
+                String nombre = datos003[i][j];
+                double valori = Double.parseDouble( datos003[i][j+1]);
+                double valorpPo = Double.parseDouble( datos003[i][j+2]);
+                double valorpB = Double.parseDouble( datos003[i][j+3]);
+                
+                MenuDia menuD = new MenuDia(nombre, valori, valorpPo, valorpB);
+                lista.add(menuD);
+                
+            }
+            
+        }
+        
+        for(int i = 0; i < datos004.length; i++){
+            
+            for(int j =0; j < 1; j++){
+                
+                String nombre = datos004[i][j];
+                double valori = Double.parseDouble( datos004[i][j+1]);
+                double guarnision = Double.parseDouble( datos004[i][j+2]);
+                double valorBeb = Double.parseDouble( datos004[i][j+3]);
+                double porcentaje = Double.parseDouble( datos004[i][j+4]);
+                
+                MenuCarta menuC = new MenuCarta(nombre, valori, guarnision, valorBeb, porcentaje );
+                lista.add(menuC);
+                
+            }
+            
+        }
         
         // Fin de solución
         
         
         for (int i = 0; i < lista.size(); i++) {
-            lista.get(i).establecerValorMenu();
+            
+            lista.get(i).calcularValorMenu();
+            
         }
         
         // Un objeto de tipo Cuenta
-        Cuenta miCuenta = new Cuenta("Luis Andrade", lista, 10);
-        miCuenta.establecerSubtotal();
-        miCuenta.establecerValorCancelar();
+        
+        Cuenta miCuenta = new Cuenta("Luis Andrade",10, lista);
+        miCuenta.calcularSubtotal();
+        miCuenta.calcularValortotal();
         System.out.printf("%s\n", miCuenta);
         
-
-
     }
+    
 }
