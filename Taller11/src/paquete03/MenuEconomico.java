@@ -4,10 +4,10 @@ public class MenuEconomico extends Menu{
     
     private double porcentajeDesucento;
     
-    public MenuEconomico(String np, double vM, double vInM,
+    public MenuEconomico(String np, double vInM,
             double pD){
     
-    super(np, vM, vInM);
+    super(np, vInM);
     
     porcentajeDesucento = pD;
     
@@ -23,7 +23,7 @@ public class MenuEconomico extends Menu{
     
     public void calcularValorMenu(){
         
-        valorMenu = valorInMenu + (valorInMenu * (porcentajeDesucento/100) );
+        valorMenu = valorInMenu - (valorInMenu * (porcentajeDesucento/100) );
                 
     }
 

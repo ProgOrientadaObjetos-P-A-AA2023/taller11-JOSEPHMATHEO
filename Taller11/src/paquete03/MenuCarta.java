@@ -7,10 +7,10 @@ public class MenuCarta extends Menu{
     private double valorBeb;
     private double porAddMenu;
     
-    public MenuCarta(String np, double vM, double vInM,
+    public MenuCarta(String np, double vInM,
             double valPg, double valB, double porMe){
         
-        super(np, vM, vInM);
+        super(np, vInM);
     
         valorPguarnicion = valPg;
         valorBeb = valB;
@@ -40,7 +40,7 @@ public class MenuCarta extends Menu{
     
     public void calcularValorMenu(){
         
-        valorMenu = valorPguarnicion + valorBeb + porAddMenu + 
+        valorMenu = valorInMenu + valorPguarnicion + valorBeb + 
                 (valorInMenu * (porAddMenu / 100));
                 
     }
@@ -72,9 +72,9 @@ public class MenuCarta extends Menu{
         cadena = String.format("%s\n"
                 + "\tPlato: %s\n"
                 + "\tValor Inicial: %.2f\n"
-                +"\tValor de porción de guarnición: "
+                +"\tValor de porción de guarnición: %.2f\n"
                 + "\tValor de Bebida: %.2f\n"
-                + "\tPorcentaje adicional por servicio: "
+                + "\tPorcentaje adicional por servicio: %.2f\n"
                 + "\tValor del Menú: %.2f\n",
                 cadena,
                 nombrePlato,

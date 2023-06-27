@@ -5,10 +5,10 @@ public class MenuNinos extends Menu{
     private double valorPorHelado;
     private double valorPorPastel;
     
-    public MenuNinos(String np, double vM, double vInM,
+    public MenuNinos(String np, double vInM,
             double vph, double vpp){
     
-    super(np, vM, vInM);
+    super(np, vInM);
     
     valorPorHelado = vph;
     valorPorPastel = vpp;

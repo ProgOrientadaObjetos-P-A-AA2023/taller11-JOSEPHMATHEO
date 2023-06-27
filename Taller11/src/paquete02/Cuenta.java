@@ -59,6 +59,8 @@ public class Cuenta {
         
         }
         
+        valortotal = valortotal + (valortotal * (iva / 100));
+        
     }
 
     public String obtenerNombre() {
@@ -94,8 +96,9 @@ public class Cuenta {
     @Override
     public String toString(){
         
-        String cadena = String.format("Factura %s\n"
-                + "Cliente: %s\n");
+        String cadena = String.format("Factura \n"
+                + "Cliente: %s\n",
+                nombre);
         
         for(int i =0; i < listado.size(); i++){
         
@@ -109,9 +112,10 @@ public class Cuenta {
         cadena = String.format("%s\n"
                 + "Subtotal: %.2f\n"
                 + "IVA: %.2f\n"
-                + "Total a Pagar: %.2f",
+                + "Total a Pagar: %.3f",
                 cadena,
                 subtotal,
+                iva,
                 valortotal);
     
         return cadena;

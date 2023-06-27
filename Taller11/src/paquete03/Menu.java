@@ -7,10 +7,9 @@ public abstract class Menu {
     protected double valorInMenu;
     
     
-    public Menu(String np, double vM, double vInM){
+    public Menu(String np, double vInM){
     
         nombrePlato = np;
-        valorMenu = vM;
         valorInMenu = vInM;
         
     }

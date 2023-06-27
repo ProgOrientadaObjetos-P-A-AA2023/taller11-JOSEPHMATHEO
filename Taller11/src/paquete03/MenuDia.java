@@ -5,10 +5,10 @@ public class MenuDia extends Menu {
     private double valorPostre;
     private double valorBeb;
     
-    public MenuDia(String np, double vM, double vInM,
+    public MenuDia(String np, double vInM,
             double vP, double vB){
     
-    super(np, vM,vInM);
+    super(np, vInM);
     
     valorPostre = vP;
     valorBeb = vB;
@@ -56,7 +56,7 @@ public class MenuDia extends Menu {
         cadena = String.format("%s\n"
                 + "\tPlato: %s\n"
                 + "\tValor Inicial: %.2f\n"
-                +"\tValor de Postre: "
+                + "\tValor de Postre: %.2f\n"
                 + "\tValor de Bebida: %.2f\n"
                 + "\tValor del Menú: %.2f\n",
                 cadena,

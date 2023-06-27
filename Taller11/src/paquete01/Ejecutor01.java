@@ -17,20 +17,41 @@ public class Ejecutor01 {
         
         // 2 objetos de tipo MenuNinos
         
-        MenuNinos menuN1 = new MenuNinos("Ninos 01", 2.00, 1.00, 1.50, 4.50);
-        MenuNinos menuN2 = new MenuNinos("Ninos 01", 3.00, 1.00, 1.50, 5.50);
+        MenuNinos menuN1 = new MenuNinos("Ninos 01", 2.00, 1.00, 1.50);
+        MenuNinos menuN2 = new MenuNinos("Ninos 01", 3.00, 1.00, 1.50);
         
         // 1 objeto de tipo MenuEconomico
         
-        MenuEconomico nenuE = new MenuEconomico("Econo 001", 4.00, 25.00, 3.00);
+        MenuEconomico nenuE = new MenuEconomico("Econo 001", 4.00, 25.00);
         
         // 1 objeto de tipo MenuDia
         
-        MenuDia menuD = new MenuDia("Dia 001", 5.00, 1.00, 1.00, 7.00);
+        MenuDia menuD = new MenuDia("Dia 001", 5.00, 1.00, 1.00);
         
         // 1 objeto de tipo MenuCarta
         
-        MenuCarta menuC = new MenuCarta("Carta 001", 6.0, 1.5, 2.0, 10.00, 10.00);
+        MenuCarta menuC = new MenuCarta("Carta 001", 6.0, 1.5, 2.0, 10.00);
+        
+        // Anadimos los objetos a la lista
+        
+        lista.add(menuN1);
+        lista.add(menuN2);
+        lista.add(nenuE);
+        lista.add(menuD);
+        lista.add(menuC);
+        
+        for(int i = 0; i < lista.size();i++){
+            
+            lista.get(i).calcularValorMenu();
+        
+        }
+        
+        Cuenta cuenta = new Cuenta("René Elizalde",10.0,lista);
+        
+        cuenta.calcularSubtotal();
+        cuenta.calcularValortotal();
+        
+        System.out.println(cuenta);
         
     }
     
