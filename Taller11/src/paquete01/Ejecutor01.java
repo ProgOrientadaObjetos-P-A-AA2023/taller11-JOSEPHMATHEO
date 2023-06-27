@@ -1,21 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package paquete01;
 
-/**
- *
- * @author reroes
- */
-public class Ejecutor01 {
+import paquete02.*;
+import paquete03.*;
+import java.util.ArrayList;
 
-    /**
-     * @param args the command line arguments
-     */
+public class Ejecutor01 {
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Solucion
+        
+        // Creacion de ArrayList de tipo Menu
+        
+        ArrayList<Menu> lista = new ArrayList();
+        
+        // 2 objetos de tipo MenuNinos
+        
+        MenuNinos menuN1 = new MenuNinos("Ninos 01", 2.00, 1.00, 1.50, 4.50);
+        MenuNinos menuN2 = new MenuNinos("Ninos 01", 3.00, 1.00, 1.50, 5.50);
+        
+        // 1 objeto de tipo MenuEconomico
+        
+        MenuEconomico nenuE = new MenuEconomico("Econo 001", 4.00, 25.00, 3.00);
+        
+        // 1 objeto de tipo MenuDia
+        
+        MenuDia menuD = new MenuDia("Dia 001", 5.00, 1.00, 1.00, 7.00);
+        
+        // 1 objeto de tipo MenuCarta
+        
+        MenuCarta menuC = new MenuCarta("Carta 001", 6.0, 1.5, 2.0, 10.00, 10.00);
+        
     }
     
     

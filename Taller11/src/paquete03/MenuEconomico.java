@@ -33,4 +33,25 @@ public class MenuEconomico extends Menu{
         
     }
     
+    @Override
+    
+    public String toString(){
+    
+        String cadena = String.format("Menu Econocmico:");
+        
+        cadena = String.format("%s\n"
+                + "\tPlato: %s\n"
+                + "\tValor Inicial: %.2f\n"
+                + "\tPorcentaje de descuento: %.2f\n"
+                + "\tValor del Menú: %.2f\n",
+                cadena,
+                nombrePlato,
+                valorInMenu,
+                porcentajeDesucento,
+                valorMenu);
+        
+        return cadena;
+        
+    }
+    
 }
